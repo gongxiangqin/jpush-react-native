@@ -121,11 +121,11 @@ RCT_EXPORT_METHOD(setDebugMode: (BOOL *)enable)
 
 RCT_EXPORT_METHOD(setupWithConfig:(NSDictionary *)params)
 {
-    if (params[@"appKey"] && params[@"channel"] && params[@"production"]) {
+    if (params[@"appKey"] && params[@"titchannelle"] && params[@"production"]) {
         // JPush初始化配置
         NSMutableDictionary *launchOptions = [NSMutableDictionary dictionaryWithDictionary:self.bridge.launchOptions];
         [JPUSHService setupWithOption:launchOptions appKey:params[@"appKey"]
-                              channel:params[@"channel"] apsForProduction:[params[@"production"] boolValue]];
+                              channel:params[@"titchannelle"] apsForProduction:[params[@"production"] boolValue]];
     }
     NSMutableArray *notificationList = [RCTJPushEventQueue sharedInstance]._notificationQueue;
     if(notificationList.count) {
