@@ -10,8 +10,7 @@ buildscript {
     }
     repositories {
         google()
-        maven{ url'http://maven.aliyun.com/nexus/content/repositories/jcenter'}
-
+        jcenter()
     }
     dependencies {
         classpath("com.android.tools.build:gradle:3.4.1")
@@ -34,18 +33,6 @@ allprojects {
         }
 
         google()
-        maven{ url'http://maven.aliyun.com/nexus/content/repositories/jcenter'}
-
+        jcenter()
     }
-}
-def REACT_NATIVE_VERSION = new File(['node', '--print',"JSON.parse(require('fs').readFileSync(require.resolve('react-native/package.json'), 'utf-8')).version"].execute(null, rootDir).text.trim())
-
-allprojects {
-    configurations.all {
-        resolutionStrategy {
-            // Remove this override in 0.65+, as a proper fix is included in react-native itself.
-            force "com.facebook.react:react-native:" + REACT_NATIVE_VERSION
-        }
-    }
-
 }
