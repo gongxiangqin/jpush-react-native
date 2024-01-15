@@ -127,7 +127,7 @@ xmlns:tools="http://schemas.android.com/tools"
 
                 <action android:name="cn.jpush.android.ui.PopWinActivity" />
 
-                <category android:name="${JPUSH_PKGNAME}" />
+                <category android:name="${applicationId}" />
             </intent-filter>
         </activity>
 
