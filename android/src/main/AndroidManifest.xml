@@ -141,7 +141,7 @@ xmlns:tools="http://schemas.android.com/tools"
                 <action android:name="cn.jpush.android.ui.PushActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="${JPUSH_PKGNAME}" />
+                <category android:name="${applicationId}" />
             </intent-filter>
         </activity>
 
@@ -154,7 +154,7 @@ xmlns:tools="http://schemas.android.com/tools"
         <!-- since 3.0.9 Required SDK 核心功能 -->
         <provider
             android:name="cn.jpush.android.service.DataProvider"
-            android:authorities="${JPUSH_PKGNAME}.DataProvider"
+            android:authorities="${applicationId}.DataProvider"
             android:exported="false"
             android:process=":pushcore" />
 
@@ -209,7 +209,7 @@ xmlns:tools="http://schemas.android.com/tools"
             android:exported="false">
             <intent-filter android:priority="1000">
                 <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY" /> <!-- Required  显示通知栏 -->
-                <category android:name="${JPUSH_PKGNAME}" />
+                <category android:name="${applicationId}" />
             </intent-filter>
         </receiver>
 
